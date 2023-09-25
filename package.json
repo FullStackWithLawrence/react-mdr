@@ -1,7 +1,7 @@
 {
   "name": "react-mdr",
   "description": "Matrix digital rain effect for React",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "index.js",
   "author": "Lawrence McDaniel <lpm0073@gmail.com>",
   "contributors": [],
