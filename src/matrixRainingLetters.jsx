@@ -12,7 +12,7 @@ import { useEffect } from "react";
 
 import "./styles.css";
 
-const renderMatrix = (ref) => {
+const renderMatrix = (ref, color) => {
     let canvas = ref.current;
     let context = canvas.getContext("2d");
 
@@ -38,7 +38,7 @@ const renderMatrix = (ref) => {
         context.fillStyle = "rgba(0, 0, 0, 0.05)"; // black w a tiny bit of alpha
         context.fillRect(0, 0, canvas.width, canvas.height);
 
-        context.fillStyle = "#0F0"; // pure green
+        context.fillStyle = color ? color : "#0F0";
         context.font = fontSize + "px monospace";
 
         for (let i = 0; i < rainDrops.length; i++) {
@@ -57,17 +57,18 @@ const renderMatrix = (ref) => {
             rainDrops[i]++;
         }
     };
-
-    return () => {
-        setInterval(render, 30);
-    };
+    return render;
 };
 
 const MatrixRainingLetters = (props) => {
     const ref = useRef();
     const keyName = "mrl-" + props.key;
     const thisClassName = "mrl-container " + props.custom_class;
-    useEffect(() => renderMatrix(ref));
+    useEffect(() => {
+        const render = renderMatrix(ref, props.color);
+        const intervalId = setInterval(render, 30);
+        return () => clearInterval(intervalId);
+    }, [props.color]);
 
     return (
         <React.Fragment>
