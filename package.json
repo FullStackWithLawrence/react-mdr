@@ -1,7 +1,7 @@
 {
   "name": "react-mdr",
   "description": "Matrix digital rain effect for React",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "index.js",
   "author": "Lawrence McDaniel <lpm0073@gmail.com>",
   "contributors": [],
@@ -11,8 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react": ">=17.0.1",
+    "react-dom": ">=17.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
@@ -28,8 +28,7 @@
     "rollup-plugin-terser": "^7.0.2"
   },
   "dependencies": {
-    "@babel/runtime": "^7.16.3",
-    "react-mdr": "^0.1.1"
+    "@babel/runtime": "^7.16.3"
   },
   "repository": {
     "type": "git",
